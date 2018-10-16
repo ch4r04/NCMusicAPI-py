@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
-
+files = ["NCMusicAPI/*"]
 setup(
-    name='NCMusicAPI-py',
+    name='NCMusicAPI',
 
     version='1.1.0',
 
@@ -33,13 +33,13 @@ setup(
             'Programming Language :: Python :: 3.5',
         ],
 
-    keywords='netEase music api python',
-
+    keywords='Netease Music API',
     # You can just specify the packages manually here if your project is
-    packages=["NCMusicAPI"],
-        # simple. Or you can use find_packages().
-    install_requires=['requests', 'pony'],
-
+    py_modules=["NCMusicAPI"],
+    packages=find_packages(exclude=['ez_setup', 'tests', 'tests.*']),
+    include_package_data=True,
+    install_requires=['requests',
+                      'pony >= 0.7.6'],
+    zip_safe=False
     # List additional groups of dependencies here
-        extras_require={},
     )
