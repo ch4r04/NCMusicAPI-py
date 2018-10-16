@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
     name='NCMusicAPI-py',
 
-    version='1.0.0',
+    version='1.1.0',
 
     description='NetEase Cloud Music Api',
     long_description="NeteaseCloudMusicAPI-python",
@@ -36,6 +36,7 @@ setup(
     keywords='netEase music api python',
 
     # You can just specify the packages manually here if your project is
+    packages=["NCMusicAPI"],
         # simple. Or you can use find_packages().
     install_requires=['requests', 'pony'],
 
