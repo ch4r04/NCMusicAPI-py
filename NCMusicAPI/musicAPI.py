@@ -15,7 +15,7 @@ from .const import Constant
 default_timeout = 10
 
 class NeteaseAdapter(object):
-    def __init__(self):
+    def __init__(self,host):
         self.header = {
             'Accept': '*/*',
             'Accept-Encoding': 'gzip,deflate,sdch',
@@ -30,6 +30,7 @@ class NeteaseAdapter(object):
         self.cookies = ''
         self.playlist_class_dict = {}
         self.session = requests.Session()
+        self.host = host
 
     def httpRequest(self,
                     method,
@@ -86,7 +87,7 @@ class NeteaseAdapter(object):
         :param password: 密码
         :return:
         '''
-        action = Constant.host + "/login/cellphone?phone=%s&password=%s" % (username, password)
+        action = self.host + "/login/cellphone?phone=%s&password=%s" % (username, password)
         try:
             return self.httpRequest("Login_GET", action)
         except Exception,e:
@@ -99,7 +100,7 @@ class NeteaseAdapter(object):
         :param song_name: 歌名
         :return: json
         '''
-        action = Constant.host + "/search?keywords=%s&limit=%d" % (song_name,limit)
+        action = self.host + "/search?keywords=%s&limit=%d" % (song_name,limit)
         try:
             return self.httpRequest("GET", action)
         except Exception,e:
@@ -163,7 +164,7 @@ class NeteaseAdapter(object):
         :param song_id:
         :return:
         '''
-        action = Constant.host + "/music/url?id=%d" % song_id
+        action = self.host + "/music/url?id=%d" % song_id
         try:
             return self.httpRequest("GET", action)
         except Exception,e:
@@ -172,7 +173,7 @@ class NeteaseAdapter(object):
 
     #登陆状态查询
     def login_status(self):
-        action = Constant.host + "/login/status"
+        action = self.host + "/login/status"
         try:
             return self.httpRequest("GET",action)
         except Exception,e:
