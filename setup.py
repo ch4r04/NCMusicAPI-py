@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 files = ["NCMusicAPI/*"]
 setup(
     name='NCMusicAPI',
-    version='1.2.0',
+    version='1.3.0',
     description='NetEase Cloud Music Api',
     long_description="NeteaseCloudMusicAPI-python",
     url='https://github.com/ch4r04/NCMusicAPI-py.git',
