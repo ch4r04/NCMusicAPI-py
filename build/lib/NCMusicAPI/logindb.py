@@ -16,7 +16,7 @@ db.bind(provider='sqlite', filename=os.path.join(Constant.conf_dir, "ncmusicapi.
 class Login_info(db.Entity):
     id = PrimaryKey(int, auto=True)
     phone = Optional(str)
-    userId = Optional(int)
+    userId = Optional(str)
     Cookie = Optional(str)
     nickname = Optional(str)
 db.generate_mapping(create_tables=True)

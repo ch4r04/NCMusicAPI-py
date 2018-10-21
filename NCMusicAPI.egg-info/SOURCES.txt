@@ -1,0 +1,12 @@
+setup.py
+NCMusicAPI/__init__.py
+NCMusicAPI/const.py
+NCMusicAPI/logindb.py
+NCMusicAPI/musicAPI.py
+NCMusicAPI/utils.py
+NCMusicAPI.egg-info/PKG-INFO
+NCMusicAPI.egg-info/SOURCES.txt
+NCMusicAPI.egg-info/dependency_links.txt
+NCMusicAPI.egg-info/not-zip-safe
+NCMusicAPI.egg-info/requires.txt
+NCMusicAPI.egg-info/top_level.txt
