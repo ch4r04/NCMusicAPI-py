@@ -60,4 +60,4 @@ def updateOrInsertOne(phone, userId, Cookie, nickname):
         puser.phone = phone
         puser.nickname = nickname
     else:
-        createOne()
+        createOne(phone,userId,Cookie, nickname)
